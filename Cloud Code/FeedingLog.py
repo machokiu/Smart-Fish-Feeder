@@ -42,7 +42,7 @@ def lambda_handler(event, context):
         sns.publish(
             Message=message,
             Subject="Feeding Notification",
-            TopicArn="arn:aws:sns:us-west-2:713924356859:FeedingNotifications"
+            TopicArn="arn:aws:sns:<region>:<account-id>:FeedingNotifications"  # Replace with actual SNS ARN
         )
 
         print(f"Feeding log saved and notification sent: {message}")
@@ -50,4 +50,4 @@ def lambda_handler(event, context):
 
     except Exception as e:
         print(f"Error processing feeding log: {e}")
-        return {'statusCode': 500, 'body': 'Internal Server Error'}
+        return {'statusCode': 50
