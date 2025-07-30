@@ -2,7 +2,7 @@ import boto3
 import json
 
 s3 = boto3.client('s3')
-BUCKET_NAME = 'fish-feeder-logs'
+BUCKET_NAME = '<bucket-name>'  # Replace with your actual S3 bucket name
 
 def lambda_handler(event, context):
     try:
