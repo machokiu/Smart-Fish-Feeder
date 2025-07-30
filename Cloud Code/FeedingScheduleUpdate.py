@@ -3,7 +3,7 @@ import json
 from datetime import datetime
 
 s3 = boto3.client('s3')
-iot = boto3.client('iot-data', region_name='us-west-2')
+iot = boto3.client('iot-data', region_name='<region>')  # Replace with actual AWS region
 BUCKET_NAME = 'fish-feeder-logs'
 MQTT_TOPIC = 'iot/commands/update-schedule'  # Topic for schedule updates
 
