@@ -3,9 +3,8 @@ import json
 from datetime import datetime, timezone, timedelta
 
 s3 = boto3.client('s3')
-iot = boto3.client('iot-data', region_name='us-west-2')
-BUCKET_NAME = 'fish-feeder-logs'
-
+iot = boto3.client('iot-data', region_name='<region>')  # Replace with actual AWS region
+BUCKET_NAME = '<bucket-name>'  # Replace with actual S3 bucket name
 
 # Define the PST timezone offset (UTC - 8 hours)
 PST = timezone(timedelta(hours=-8))
@@ -29,7 +28,7 @@ def lambda_handler(event, context):
 
         # Publish to IoT Core
         iot.publish(
-            topic='iot/commands/feed-now',
+            topic='<iot-topic>',  # Replace with actual IoT topic name
             qos=1,
             payload=json.dumps({'action': 'feedNow', 'time': formatted_time})
         )
