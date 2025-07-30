@@ -10,11 +10,11 @@ import RPi.GPIO as GPIO
 SERVO_PIN = 18
 
 # MQTT Configuration
-ENDPOINT = "a1j9e7g9r2yzrs-ats.iot.us-west-2.amazonaws.com"
+ENDPOINT = ***
 CLIENT_ID = "FishFeeder"
-PATH_TO_CERT = "/home/machokiu/Desktop/SFF_Cert/certificate.pem.crt"
-PATH_TO_KEY = "/home/machokiu/Desktop/SFF_Cert/private.pem.key"
-PATH_TO_ROOT_CA = "/home/machokiu/Desktop/SFF_Cert/RootCA1.pem"
+PATH_TO_CERT = ***
+PATH_TO_KEY = ***
+PATH_TO_ROOT_CA = ***
 TOPIC_FEED_NOW = "iot/commands/feed-now"
 TOPIC_UPDATE_SCHEDULE = "iot/commands/update-schedule"
 TOPIC_FEED_LOG = "iot/commands/feed-log"
