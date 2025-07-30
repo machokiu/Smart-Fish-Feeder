@@ -1,0 +1,5 @@
+{
+  "topicFilter": "iot/commands/update-schedule",
+  "qos": 1,
+  "messages": []
+}
