@@ -1,105 +1,107 @@
 {
-  "openapi" : "3.0.1",
-  "info" : {
-    "title" : "FeederControlAPI",
-    "version" : "2024-12-04 04:11:20UTC"
+  "openapi": "3.0.1",
+  "info": {
+    "title": "FeederControlAPI",
+    "version": "2024-12-04 04:11:20UTC"
   },
-  "servers" : [ {
-    "url" : "https://vfuww6i7na.execute-api.us-west-2.amazonaws.com/{basePath}",
-    "variables" : {
-      "basePath" : {
-        "default" : ""
-      }
-    }
-  } ],
-  "paths" : {
-    "/get-feeding-log" : {
-      "get" : {
-        "responses" : {
-          "default" : {
-            "description" : "Default response for GET /get-feeding-log"
-          }
-        },
-        "x-amazon-apigateway-integration" : {
-          "payloadFormatVersion" : "2.0",
-          "type" : "aws_proxy",
-          "httpMethod" : "POST",
-          "uri" : "arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:713924356859:function:getFeedingLog/invocations",
-          "connectionType" : "INTERNET"
-        }
-      }
-    },
-    "/get-schedule" : {
-      "get" : {
-        "responses" : {
-          "default" : {
-            "description" : "Default response for GET /get-schedule"
-          }
-        },
-        "x-amazon-apigateway-integration" : {
-          "payloadFormatVersion" : "2.0",
-          "type" : "aws_proxy",
-          "httpMethod" : "POST",
-          "uri" : "arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:713924356859:function:getFeedingSchedule/invocations",
-          "connectionType" : "INTERNET"
-        }
-      }
-    },
-    "/clear-schedule" : {
-      "post" : {
-        "responses" : {
-          "default" : {
-            "description" : "Default response for POST /clear-schedule"
-          }
-        },
-        "x-amazon-apigateway-integration" : {
-          "payloadFormatVersion" : "2.0",
-          "type" : "aws_proxy",
-          "httpMethod" : "POST",
-          "uri" : "arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:713924356859:function:FeedingScheduleUpdate/invocations",
-          "connectionType" : "INTERNET"
-        }
-      }
-    },
-    "/feed-now" : {
-      "post" : {
-        "responses" : {
-          "default" : {
-            "description" : "Default response for POST /feed-now"
-          }
-        },
-        "x-amazon-apigateway-integration" : {
-          "payloadFormatVersion" : "2.0",
-          "type" : "aws_proxy",
-          "httpMethod" : "POST",
-          "uri" : "arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:713924356859:function:FeedingTriger/invocations",
-          "connectionType" : "INTERNET"
-        }
-      }
-    },
-    "/update-schedule" : {
-      "post" : {
-        "responses" : {
-          "default" : {
-            "description" : "Default response for POST /update-schedule"
-          }
-        },
-        "x-amazon-apigateway-integration" : {
-          "payloadFormatVersion" : "2.0",
-          "type" : "aws_proxy",
-          "httpMethod" : "POST",
-          "uri" : "arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:713924356859:function:FeedingScheduleUpdate/invocations",
-          "connectionType" : "INTERNET"
+  "servers": [
+    {
+      "url": "https://<api-id>.execute-api.<region>.amazonaws.com/{basePath}",
+      "variables": {
+        "basePath": {
+          "default": ""
         }
       }
     }
+  ],
+  "paths": {
+    "/get-feeding-log": {
+      "get": {
+        "responses": {
+          "default": {
+            "description": "Default response for GET /get-feeding-log"
+          }
+        },
+        "x-amazon-apigateway-integration": {
+          "payloadFormatVersion": "2.0",
+          "type": "aws_proxy",
+          "httpMethod": "POST",
+          "uri": "arn:aws:apigateway:<region>:lambda:path/2015-03-31/functions/arn:aws:lambda:<region>:<account-id>:function:getFeedingLog/invocations",
+          "connectionType": "INTERNET"
+        }
+      }
+    },
+    "/get-schedule": {
+      "get": {
+        "responses": {
+          "default": {
+            "description": "Default response for GET /get-schedule"
+          }
+        },
+        "x-amazon-apigateway-integration": {
+          "payloadFormatVersion": "2.0",
+          "type": "aws_proxy",
+          "httpMethod": "POST",
+          "uri": "arn:aws:apigateway:<region>:lambda:path/2015-03-31/functions/arn:aws:lambda:<region>:<account-id>:function:getFeedingSchedule/invocations",
+          "connectionType": "INTERNET"
+        }
+      }
+    },
+    "/clear-schedule": {
+      "post": {
+        "responses": {
+          "default": {
+            "description": "Default response for POST /clear-schedule"
+          }
+        },
+        "x-amazon-apigateway-integration": {
+          "payloadFormatVersion": "2.0",
+          "type": "aws_proxy",
+          "httpMethod": "POST",
+          "uri": "arn:aws:apigateway:<region>:lambda:path/2015-03-31/functions/arn:aws:lambda:<region>:<account-id>:function:FeedingScheduleUpdate/invocations",
+          "connectionType": "INTERNET"
+        }
+      }
+    },
+    "/feed-now": {
+      "post": {
+        "responses": {
+          "default": {
+            "description": "Default response for POST /feed-now"
+          }
+        },
+        "x-amazon-apigateway-integration": {
+          "payloadFormatVersion": "2.0",
+          "type": "aws_proxy",
+          "httpMethod": "POST",
+          "uri": "arn:aws:apigateway:<region>:lambda:path/2015-03-31/functions/arn:aws:lambda:<region>:<account-id>:function:FeedingTriger/invocations",
+          "connectionType": "INTERNET"
+        }
+      }
+    },
+    "/update-schedule": {
+      "post": {
+        "responses": {
+          "default": {
+            "description": "Default response for POST /update-schedule"
+          }
+        },
+        "x-amazon-apigateway-integration": {
+          "payloadFormatVersion": "2.0",
+          "type": "aws_proxy",
+          "httpMethod": "POST",
+          "uri": "arn:aws:apigateway:<region>:lambda:path/2015-03-31/functions/arn:aws:lambda:<region>:<account-id>:function:FeedingScheduleUpdate/invocations",
+          "connectionType": "INTERNET"
+        }
+      }
+    }
   },
-  "x-amazon-apigateway-cors" : {
-    "allowMethods" : [ "GET", "OPTIONS", "POST" ],
-    "allowHeaders" : [ "content-type" ],
-    "maxAge" : 0,
-    "allowCredentials" : false,
-    "allowOrigins" : [ "http://feeder-web-ui.s3-website-us-west-2.amazonaws.com" ]
+  "x-amazon-apigateway-cors": {
+    "allowMethods": ["GET", "OPTIONS", "POST"],
+    "allowHeaders": ["content-type"],
+    "maxAge": 0,
+    "allowCredentials": false,
+    "allowOrigins": ["http://feeder-web-ui.s3-website-us-west-2.amazonaws.com"]
   },
-  "x-amazon-apigateway-importexport-version" : "1.0"
+  "x-amazon-apigateway-importexport-version": "1.0"
 }
