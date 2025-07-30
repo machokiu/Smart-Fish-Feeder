@@ -1,6 +1,5 @@
 // Base URL for API Gateway
-const API_BASE_URL = 'https://vfuww6i7na.execute-api.us-west-2.amazonaws.com/v2';
-
+const API_BASE_URL = '<api-base-url>';  // Replace with actual API base URL
 
 // Utility function to make API requests
 const makeApiRequest = async (endpoint, method = 'GET', data = null) => {
@@ -85,8 +84,6 @@ const clearAllSchedules = async () => {
     }
 };
 
-
-
 // Refresh and display the feeding log
 const refreshFeedingLog = async () => {
     const response = await makeApiRequest('/get-feeding-log', 'GET');
@@ -124,7 +121,6 @@ const refreshSchedule = async () => {
         alert('Failed to load schedule.');
     }
 };
-
 
 // Set event listeners for buttons
 document.getElementById('feed-now').addEventListener('click', feedNow);
