@@ -10,11 +10,11 @@ import RPi.GPIO as GPIO
 SERVO_PIN = 18
 
 # MQTT Configuration
-ENDPOINT = ***
+ENDPOINT = '<iot-endpoint>'  # Replace with your AWS IoT endpoint
 CLIENT_ID = "FishFeeder"
-PATH_TO_CERT = ***
-PATH_TO_KEY = ***
-PATH_TO_ROOT_CA = ***
+PATH_TO_CERT = '<path-to-cert>'  # Replace with actual path to certificate file
+PATH_TO_KEY = '<path-to-key>'    # Replace with actual path to private key file
+PATH_TO_ROOT_CA = '<path-to-root-ca>'  # Replace with actual path to root CA file
 TOPIC_FEED_NOW = "iot/commands/feed-now"
 TOPIC_UPDATE_SCHEDULE = "iot/commands/update-schedule"
 TOPIC_FEED_LOG = "iot/commands/feed-log"
